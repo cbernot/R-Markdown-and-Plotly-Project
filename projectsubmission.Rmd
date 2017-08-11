@@ -1,0 +1,37 @@
+---
+title: "R Markdown Presentation and Plotly"
+author: "cgb"
+date: "August 11, 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,warning=FALSE,comment=FALSE)
+```
+
+
+
+
+
+
+## Analyzing MPG in Cars
+```{r, comment = "", echo=TRUE}
+head(mtcars)
+```
+
+
+## Looking at the Effect of Weight and Displacement on MPG
+
+```{r, echo=FALSE, eval=TRUE, comment=FALSE,warning=FALSE,message=FALSE,fig.align='center'}
+library(plotly)
+plot_ly(mtcars, x = ~wt, y = ~mpg, type = "scatter", color = ~disp)
+
+```
+
+## Looking at the Effect of Weight and Horsepower on MPG
+
+```{r, echo=FALSE,warning=FALSE, comment=FALSE,message=FALSE,fig.align='center'}
+plot_ly(mtcars, x = ~wt, y = ~mpg, type = "scatter", color = ~hp)
+```
+
+
